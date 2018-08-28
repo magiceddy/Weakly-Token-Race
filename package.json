@@ -1,0 +1,65 @@
+{
+  "name": "weekly-token-race",
+  "version": "0.1.0",
+  "description": "Weekly Token Race Front-End",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "webpack --mode development",
+    "build": "webpack --optimize-minimize --mode production",
+    "start": "webpack-dev-server --mode development",
+    "lint": "./node_modules/.bin/eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magiceddy/Weekly-Token-Race.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "Token",
+    "Game",
+    "React"
+  ],
+  "author": "Rinaldo Rossi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magiceddy/Weekly-Token-Race/issues"
+  },
+  "homepage": "https://github.com/magiceddy/Weekly-Token-Race#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-html": "^4.0.5",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^3.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.6",
+    "pre-push": "^0.1.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "eslint-loader": "^2.1.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "pre-push": [
+    "lint"
+  ]
+}
