@@ -30,6 +30,7 @@
     "plugin:react/recommended"
   ],
   "rules": {
+    "no-console": 1,
     "import/no-unresolved": "off",
     "max-len": [
       1,
