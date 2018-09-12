@@ -7,7 +7,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { LoadingContainer } from 'drizzle-react-components';
 import { history, store } from './redux/store';
 import drizzleOptions from './drizzleOptions';
-import App from './App';
+import { App } from './containers';
 
 ReactDOM.render((
   <DrizzleProvider options={drizzleOptions} store={store}>
