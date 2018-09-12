@@ -20,5 +20,7 @@
   "ignore": [
     "node_modules/**"
   ],
-  "plugins": []
+  "plugins": [
+    "transform-class-properties"
+  ]
 }
