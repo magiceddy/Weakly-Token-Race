@@ -13,7 +13,7 @@ class TokensForm extends Component {
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
-
+  //   nextProps
   // }
 
   handleChange = token => event =>

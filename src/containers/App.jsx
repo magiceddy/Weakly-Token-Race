@@ -1,43 +1,34 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCoinbase } from '../redux/selectors';
+import { getCoinbase, getTokenList } from '../redux/selectors';
 import { initApp } from '../redux/actions';
-import { getTokenList } from '../services/ethPlorer';
 import { TokensForm } from '../components';
 
 class App extends Component {
-  constructor(props, context) {
-    super(props);
-  }
-
-  state = {
-    tokenList: null
-  }
-
-  async componentDidMount() {
-    const { coinbase } = this.props;
+  componentDidMount() {
+    const { coinbase, initApp } = this.props;
 
     if (coinbase) {
-      const tokenList = await getTokenList('0x86f7aa79744de79dab78eb2795cf26bed884640f');
-      this.setState({ tokenList: tokenList });
+      initApp('0x86f7aa79744de79dab78eb2795cf26bed884640f');
     }
   }
 
   render() {
-    const { tokenList } = this.state;
+    const { tokenList } = this.props;
 
-    if (tokenList) {
-      return (
-        <TokensForm tokens={tokenList}></TokensForm>
-      );
+    if (tokenList.length > 0) {
+      return <TokensForm tokens={tokenList}></TokensForm>
+    } else {
+      return <div>{`Your address doesn't have tokens`}</div>
     }
-    return <div>No Tokens? aja jai jai jai</div>
   }
 }
 
 App.propTypes = {
-  coinbase: PropTypes.string.isRequired
+  coinbase: PropTypes.string.isRequired,
+  initApp: PropTypes.func.isRequired,
+  tokenList: PropTypes.array.isRequired
 }
 
 App.defaultProps = {
@@ -46,7 +37,8 @@ App.defaultProps = {
 
 export default connect(
   state => ({
-    coinbase: getCoinbase(state)
+    coinbase: getCoinbase(state),
+    tokenList: getTokenList(state)
   }),
   {
     initApp

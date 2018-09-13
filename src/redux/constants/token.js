@@ -1,0 +1,1 @@
+export const FETCH_TOKEN_LIST = 'FETCH_TOKEN_LIST';

@@ -2,8 +2,11 @@ import { getAddressInfo } from 'weekly-token-race-api';
 
 const extractTokenList = addressInfo =>
   addressInfo.tokens.reduce((acc, token) => {
-    const { symbol } = token.tokenInfo;
-    acc.push(symbol);
+    const { symbol, price } = token.tokenInfo;
+    if (price) {
+      acc.push(symbol);
+    }
+
     return acc;
   }, [])
 
